@@ -1,0 +1,13 @@
+[user]
+	name = Oleg Shaldybin
+	email = oleg.shaldybin@gmail.com
+[color]
+	ui = auto
+
+[apply]
+	whitespace = fix
+
+[alias]
+        st = status
+	ca = commit -a
+	co = checkout
