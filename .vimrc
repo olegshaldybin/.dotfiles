@@ -1,1 +1,1 @@
-syntax on
+source ~/.vim/vimrc

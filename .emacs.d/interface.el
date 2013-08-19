@@ -51,17 +51,13 @@
 (require 'ansi-color)
 (ansi-color-for-comint-mode-on)
 
-(require 'color-theme)
-(color-theme-initialize)
-(load-file "~/.emacs.d/site-lisp/themes/color-theme-railscasts.el")
-(color-theme-railscasts)
-
 ;; tabs behavior
 (setq default-tab-width 2)
 (setq-default indent-tabs-mode nil)
 
 ;; add path hints to buffers with the same name
 (require 'uniquify)
+
 (setq uniquify-buffer-name-style 'reverse)
 (setq uniquify-separator "/")
 (setq uniquify-after-kill-buffer-p t)

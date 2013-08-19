@@ -32,12 +32,13 @@ git_branch() {
     test -n "$branch" && echo "($branch)"
 }
 
-# ruby
-if which rbenv >& /dev/null; then
-    eval "$(rbenv init -)"
-fi
+export PS1="\h:\w\$(git_branch)% "
 
-# coreutls
+# ruby
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# coreutils
 brew=/usr/local/bin/brew
 if [ -x $brew ]; then
   gnubin=$($brew --prefix coreutils)/libexec/gnubin
