@@ -41,7 +41,11 @@ fi
 brew=/usr/local/bin/brew
 if [ -x $brew ]; then
   gnubin=$($brew --prefix coreutils)/libexec/gnubin
+  gnuman=$($brew --prefix coreutils)/libexec/gnuman
   if [ -d $gnubin ]; then
     export PATH=$gnubin:$PATH
+  fi
+  if [ -d $gnuman ]; then
+    export MANPATH=$gnuman:$MANPATH
   fi
 fi
