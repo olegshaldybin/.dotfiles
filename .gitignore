@@ -8,3 +8,5 @@
 .DS_Store
 .vim/tmp
 .vim/.netrwhist
+.idea
+java/api-frontend/META-INF/persistence.xml

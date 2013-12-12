@@ -1,14 +1,21 @@
-(require 'cl)
+;; On OSX this needs to be run
+;; $ defaults write ~/.MacOSX/environment PATH "`echo $PATH`"
+;; $ echo "setenv PATH $PATH" | sudo tee /etc/launchd.conf
 
-(add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/site-lisp")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/git")
+(setenv "GOPATH" "/Users/oleg/projects/go")
+(setenv "PATH" (concat "/Users/oleg/projects/go/bin:" (getenv "PATH")))
 
-(require 'interface)
-(require 'bindings)
-(require 'go)
+(setq default-directory "~")
+(push (concat user-emacs-directory "bin") exec-path)
+(push (concat (getenv "GOPATH") "/bin") exec-path)
 
-;; system-specific config
-(set-default-font "Inconsolata-dz-14")
+(defun load-dir (dir)
+  (mapc 'load (directory-files dir t "^[^#].*el$")))
+
+(load-file "~/.emacs.d/el-get.el")
+(load-file "~/.emacs.d/custom.el")
+(load-dir (concat user-emacs-directory "custom/"))
+
+(set-default-font "Inconsolata-dz-12")
 (setq mac-allow-anti-aliasing t)
 (put 'downcase-region 'disabled nil)

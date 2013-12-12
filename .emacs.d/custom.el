@@ -1,3 +1,23 @@
+;; Color theme
+(load-theme 'railscasts t)
+
+;; Backup files destination
+(setq backup-directory-alist `(("." . "~/.backups")))
+
+;; ag integration
+(setq ag-highlight-search t)
+
+;; Key bindings
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\M-n" 'goto-line)
+(global-set-key "\C-x\C-n" 'next-buffer)
+(global-set-key "\C-x\C-p" 'previous-buffer)
+(global-set-key "\M-=" 'align-regexp)
+
+; Turn off 'hide' shortcut
+(global-set-key "\C-z" nil)
+
 ;; window title
 (setq frame-title-format "%b %+%+ %f")
 
@@ -14,13 +34,12 @@
 (column-number-mode 1)
 
 ;; ido mode
-(when (> emacs-major-version 21)
-  (require 'ido)
-  (ido-mode t)
-  (setq ido-enable-prefix nil
-	ido-enable-flex-matching t
-	ido-create-new-buffer 'always
-	ido-max-prospects 10))
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-max-prospects 10)
 
 ;; no beep
 (setq ring-bell-function 'ignore)
@@ -28,13 +47,6 @@
 ;; mouse wheel enabled
 (load-library "mwheel")
 (mwheel-install)
-
-;; show matching parentheses
-(show-paren-mode t)
-(setq paren-sexp-mode 'never)
-
-;; don't clutter directories with backup files
-(setq  backup-directory-alist `(("." . ,(expand-file-name "/tmp/emacs-backups"))) auto-save-default nil)
 
 ;; scrolling behavior
 (setq scroll-margin 10)
@@ -52,7 +64,7 @@
 (ansi-color-for-comint-mode-on)
 
 ;; tabs behavior
-(setq default-tab-width 2)
+(setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
 
 ;; add path hints to buffers with the same name
@@ -63,11 +75,28 @@
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
 
+;; mac stuff
 (setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
+;; remove whitespaces on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(provide 'interface)
+;; auto complete
+(require 'auto-complete-config)
+(setq ac-dictionary-files (list (concat user-emacs-directory ".dict")))
+(ac-config-default)
+
+;; auto pair
+(require 'autopair)
+(autopair-global-mode)
+
+;; show matching parentheses
+(show-paren-mode t)
+(setq paren-sexp-mode 'never)
+
+;; flymake
+(require 'flymake)
+(require 'flymake-cursor)

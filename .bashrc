@@ -1,3 +1,6 @@
+shopt -s histappend
+export PROMPT_COMMAND="history -a"
+
 export EDITOR="emacs"
 
 # Golang
