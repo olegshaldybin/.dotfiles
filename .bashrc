@@ -1,5 +1,9 @@
 export EDITOR="emacs"
 
+# Golang
+export GOPATH=$HOME/projects/go
+export PATH=$PATH:$GOPATH/bin
+
 # colors
 LS_OPTIONS='--color=auto'
 export TERM=xterm-color
