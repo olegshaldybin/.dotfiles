@@ -16,10 +16,7 @@
  'sync '(ag
          auto-complete
          autopair
+         exec-path-from-shell
          flymake-cursor
          json
-         go
-         go-autocomplete
-         goflymake
-         golint
          railscasts-theme))

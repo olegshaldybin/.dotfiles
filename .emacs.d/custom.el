@@ -59,10 +59,6 @@
 ;; narrowing
 (put 'narrow-to-region 'disabled nil)
 
-;; set up colors
-(require 'ansi-color)
-(ansi-color-for-comint-mode-on)
-
 ;; tabs behavior
 (setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
@@ -96,7 +92,3 @@
 ;; show matching parentheses
 (show-paren-mode t)
 (setq paren-sexp-mode 'never)
-
-;; flymake
-(require 'flymake)
-(require 'flymake-cursor)
