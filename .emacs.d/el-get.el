@@ -16,6 +16,7 @@
  'sync '(ag
          auto-complete
          autopair
+         buffer-move
          exec-path-from-shell
          flymake-cursor
          idle-highlight-mode

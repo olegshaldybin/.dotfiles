@@ -1,5 +1,10 @@
 (load-theme 'railscasts t)
 
+(global-hl-line-mode nil)
+
+(custom-set-faces
+ '(highlight ((t (:background "#333")))))
+
 (setq backup-directory-alist `(("." . "~/.backups")))
 
 (setq ag-highlight-search t)
@@ -96,3 +101,11 @@
         1 font-lock-warning-face t)))
 
 (require 'idle-highlight-mode)
+
+(global-set-key (kbd "C-x i") 'buf-move-up)
+(global-set-key (kbd "C-x k") 'buf-move-down)
+(global-set-key (kbd "C-x j") 'buf-move-left)
+(global-set-key (kbd "C-x l") 'buf-move-right)
+
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
