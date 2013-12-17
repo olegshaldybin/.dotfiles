@@ -18,5 +18,6 @@
          autopair
          exec-path-from-shell
          flymake-cursor
+         idle-highlight-mode
          json
          railscasts-theme))

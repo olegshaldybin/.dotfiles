@@ -17,6 +17,7 @@
 
 (add-hook 'go-mode-hook
           (lambda ()
+            (idle-highlight-mode t)
             (local-set-key (kbd "C-c o") 'godef-jump)
             (local-set-key (kbd "C-c d") 'godef-describe)
             (local-set-key (kbd "C-c l") 'golint)

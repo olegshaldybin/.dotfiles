@@ -33,6 +33,7 @@ alias glo='git log'
 alias ls='ls --color -F'
 alias g='cd ~/projects'
 alias vi='vim'
+alias ec='emacsclient -n'
 
 git_branch() {
     branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
