@@ -5,7 +5,7 @@ export EDITOR="emacs"
 
 # Golang
 export GOPATH=$HOME/projects/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # colors
 LS_OPTIONS='--color=auto'

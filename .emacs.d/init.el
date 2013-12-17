@@ -5,9 +5,8 @@
 
 (load-file "~/.emacs.d/el-get.el")
 
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-env "GOPATH"))
+(exec-path-from-shell-initialize)
+(exec-path-from-shell-copy-env "GOPATH")
 
 (push (concat user-emacs-directory "bin") exec-path)
 
