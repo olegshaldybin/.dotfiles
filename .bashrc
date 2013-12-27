@@ -2,6 +2,8 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a"
 
 export EDITOR="emacs"
+export LC_ALL="C"
+export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 
 # Golang
 export GOPATH=$HOME/projects/go
@@ -58,3 +60,5 @@ if [ -x $brew ]; then
     export MANPATH=$gnuman:$MANPATH
   fi
 fi
+
+source ~/.bashrc.local

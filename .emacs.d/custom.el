@@ -103,9 +103,11 @@
 (require 'idle-highlight-mode)
 
 (global-set-key (kbd "C-x i") 'buf-move-up)
-(global-set-key (kbd "C-x k") 'buf-move-down)
+(global-set-key (kbd "C-x ,") 'buf-move-down)
 (global-set-key (kbd "C-x j") 'buf-move-left)
 (global-set-key (kbd "C-x l") 'buf-move-right)
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
+
+(setq-default line-spacing 0.12)
