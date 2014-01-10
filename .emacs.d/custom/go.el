@@ -13,7 +13,8 @@
 (setq gofmt-command "goimports")
 (add-hook 'before-save-hook 'gofmt-before-save)
 (add-hook 'go-mode-hook (lambda ()
-                          (setq whitespace-line-column 120)))
+                          (setq whitespace-line-column 120)
+                          (setq default-tab-width 2)))
 
 (add-hook 'go-mode-hook
           (lambda ()

@@ -109,5 +109,3 @@
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
-
-(setq-default line-spacing 0.12)

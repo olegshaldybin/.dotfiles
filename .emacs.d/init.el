@@ -13,6 +13,4 @@
 (load-file "~/.emacs.d/custom.el")
 (load-dir (concat user-emacs-directory "custom/"))
 
-(set-default-font "Inconsolata-dz-14")
-(setq mac-allow-anti-aliasing t)
-(put 'downcase-region 'disabled nil)
+(set-face-attribute 'default nil :family "Source Code Pro" :height 140 :weight 'normal)

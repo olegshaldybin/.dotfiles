@@ -42,7 +42,7 @@ git_branch() {
     test -n "$branch" && echo "($branch)"
 }
 
-export PS1="\h:\w\$(git_branch)% "
+export PS1="\h:\W\$(git_branch)% "
 
 # ruby
 export RBENV_ROOT=/usr/local/var/rbenv
